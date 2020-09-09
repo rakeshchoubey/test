@@ -1,5 +1,5 @@
 version: 0.0
-os: linux
+os: windows
 files:
-- source: /
-  destination: /home/ec2-user
+- source: diusingboot-0.0.1-SNAPSHOT.jar
+  destination: c:\temp\webapps\
