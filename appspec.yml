@@ -1,5 +1,5 @@
 version: 0.0
 os: windows
 files:
-- source: diusingboot-0.0.1-SNAPSHOT.jar
+- source: source
   destination: c:\temp\webapps\
