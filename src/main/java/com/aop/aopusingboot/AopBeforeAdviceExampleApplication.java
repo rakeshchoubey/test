@@ -7,7 +7,8 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 @SpringBootApplication
 @EnableAspectJAutoProxy(proxyTargetClass = true)
 public class AopBeforeAdviceExampleApplication {
-	public static void main(String[] args) {
-		SpringApplication.run(AopBeforeAdviceExampleApplication.class, args);
-	}
+	/*
+	 * public static void main(String[] args) {
+	 * SpringApplication.run(AopBeforeAdviceExampleApplication.class, args); }
+	 */
 }
