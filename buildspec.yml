@@ -10,6 +10,7 @@ phases:
       - Start-Process vs_BuildTools.exe -ArgumentList '--add', 'Microsoft.VisualStudio.Workload.MSBuildTools', '--add', 'Microsoft.VisualStudio.Workload.NetCoreBuildTools', '--add', 'Microsoft.VisualStudio.Workload.WebBuildTools;includeRecommended', '--quiet', '--norestart', '--nocache' -NoNewWindow -Wait;
       - Start-Process -Wait -FilePath $Env:ProgramFiles\NuGet\nuget.exe -Argument "/silent" -PassThru
       - setx /M PATH "${Env:ProgramFiles}\NuGet\;${Env:ProgramFiles(x86)}\Microsoft Visual Studio\2017\BuildTools\MSBuild\15.0\Bin"
+      - nuget.exe restore
       - ('4.0', '4.5.2', '4.6.2', '4.7.2') `| %{ `Invoke-WebRequest -UseBasicParsing https://dotnetbinaries.blob.core.windows.net/referenceassemblies/v${_}.zip -OutFile referenceassemblies.zip; `Expand-Archive -Force referenceassemblies.zip -DestinationPath "${Env:ProgramFiles(x86)}\Reference Assemblies\Microsoft\Framework\.NETFramework\"; `Remove-Item -Force referenceassemblies.zip; `}
  
   build:
